@@ -20,11 +20,7 @@ def serv(server):
 def send_bulk_emails(receiver_email, subject, message_body,
                       num_emails, delay, progress_callback,
                       stop_event, done_callback):
-    """
-    This is the user's original script logic, kept intact.
-    input() statements were swapped for function parameters so the
-    GUI can supply the values instead of the console.
-    """
+    
     try:
         server = smtplib.SMTP('smtp.gmail.com', 587)   
         server.starttls()                                
@@ -59,10 +55,6 @@ def send_bulk_emails(receiver_email, subject, message_body,
     except Exception as e:
         done_callback(False, str(e), False)
 
-# ==================================================================
-# ==================  ORIGINAL BACKEND CODE — END  =================
-# ==================================================================
-
 
 # ==================================================================
 # ==========================  GUI LAYER  ============================
@@ -70,6 +62,8 @@ def send_bulk_emails(receiver_email, subject, message_body,
 
 ctk.set_appearance_mode("dark")
 ctk.set_default_color_theme("blue")
+
+#----default-message-to-send-reciever---------
 
 DEFAULT_MESSAGE = """Hello,
 
