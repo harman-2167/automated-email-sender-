@@ -53,16 +53,23 @@ pip install customtkinter
 ============Screenshots============
 
 . Sender GUI
+
 . Email Sending Process
+
 . Recipient Inbox (10 emails received successfully)
 
 ==============Future Enhancements============
 
 . Bulk email support using CSV files
+
 . File attachment support
+
 . HTML email templates
+
 . Email scheduling
+
 . Progress bar
+
 . Improved logging and error handling
 
 ===============Author===============
