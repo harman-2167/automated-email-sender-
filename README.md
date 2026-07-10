@@ -24,10 +24,15 @@ A Python-based desktop application that automates sending emails using SMTP. The
 ============Project Structure==============
 
 Automated-Email-Sender/
+
 │── screenshots of sender
+
 │── ames.py
+
 │── amesgui.py
+
 │── screenshot of reciver
+
 │── README.md
 
 ===========Installation===========
