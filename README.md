@@ -2,6 +2,7 @@
 GUI-based Automated Email Sender built with Python, CustomTkinter, and SMTP.
 
 ==============Overview==============
+
 A Python-based desktop application that automates sending emails using SMTP. The application features a modern GUI built with CustomTkinter and supports sending multiple emails efficiently.
 
 =============Features===============
@@ -13,6 +14,7 @@ A Python-based desktop application that automates sending emails using SMTP. The
 - Easy-to-use interface
 
 =============Technologies Used============
+
 - Python
 - CustomTkinter
 - smtplib
@@ -20,6 +22,7 @@ A Python-based desktop application that automates sending emails using SMTP. The
 - Threading
 
 ============Project Structure==============
+
 Automated-Email-Sender/
 │── screenshots of sender
 │── ames.py
@@ -28,9 +31,11 @@ Automated-Email-Sender/
 │── README.md
 
 ===========Installation===========
+
 pip install customtkinter
 
 ==============Usage================
+
 1. Launch the application.
 2. Enter the sender's email address and App Password.
 3. Enter the recipient's email address.
@@ -41,11 +46,13 @@ pip install customtkinter
 8. Verify the received emails in the recipient's inbox.
 
 ============Screenshots============
+
 . Sender GUI
 . Email Sending Process
 . Recipient Inbox (10 emails received successfully)
 
 ==============Future Enhancements============
+
 . Bulk email support using CSV files
 . File attachment support
 . HTML email templates
@@ -54,4 +61,5 @@ pip install customtkinter
 . Improved logging and error handling
 
 ===============Author===============
+
 Harmandeep Kaur
