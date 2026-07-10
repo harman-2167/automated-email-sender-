@@ -1,28 +1,4 @@
-"""📧 Automated Email Sender — GUI Edition
-----------------------------------------
-This file wraps the user's EXISTING backend logic in a modern
-CustomTkinter GUI. The backend section below is functionally
-IDENTICAL to the original script:
-
-    - Same smtplib.SMTP('smtp.gmail.com', 587) connection
-    - Same server.starttls()
-    - Same serv(server) login function
-    - Same EmailMessage() construction
-    - Same for-loop + server.sendmail() + time.sleep() pattern
-    - Same server.quit() at the end
-
-The ONLY changes made to the backend are:
-    1. input() calls were replaced with parameters passed in from the GUI
-       (receiver_email, subject, message_body, num_emails, delay)
-    2. A stop_event check and a progress_callback call were added
-       inside the loop so the GUI can show live progress and allow
-       cancelling mid-way — no SMTP/sending logic was altered.
-    3. Everything is wrapped in try/except so errors surface as a
-       popup instead of crashing the script.
-
-Run with:  python email_sender_gui.py
-Requires:  pip install customtkinter
-"""
+"""📧 Automated Email Sender — GUI Edition"""
 
 import threading
 import time
@@ -37,8 +13,8 @@ from email.message import EmailMessage
 
 
 def serv(server):
-    # Exactly the same login function from the original script
-    server.login('hdeep89977@gmail.com', 'syqk fsmb yhsg zmma')
+    
+    server.login('hdeep89977@gmail.com', 'enter_your_password')
 
 
 def send_bulk_emails(receiver_email, subject, message_body,
@@ -50,35 +26,35 @@ def send_bulk_emails(receiver_email, subject, message_body,
     GUI can supply the values instead of the console.
     """
     try:
-        server = smtplib.SMTP('smtp.gmail.com', 587)   # <-- unchanged
-        server.starttls()                                # <-- unchanged
+        server = smtplib.SMTP('smtp.gmail.com', 587)   
+        server.starttls()                                
 
-        serv(server)                                      # <-- unchanged
+        serv(server)                                     
 
         msg = EmailMessage()
-        msg['From'] = "hdeep89977@gmail.com"               # <-- unchanged
-        msg['To'] = receiver_email          # was: input("Enter receiver email: ")
-        msg['subject'] = subject            # was: hardcoded subject string
+        msg['From'] = "hdeep89977@gmail.com"               
+        msg['To'] = receiver_email          
+        msg['subject'] = subject            
 
-        msg.set_content(message_body)       # was: hardcoded message body
+        msg.set_content(message_body)       
 
-        for i in range(num_emails):         # was: range(10)
-            if stop_event.is_set():         # NEW: allows Stop button to break loop
+        for i in range(num_emails):         
+            if stop_event.is_set():        
                 break
 
-            server.sendmail(                # <-- unchanged
+            server.sendmail(                
                 msg['From'],
                 msg['To'],
                 msg.as_string()
             )
-            print(f"Email {i + 1} sent")    # <-- unchanged
+            print(f"Email {i + 1} sent")    
 
-            progress_callback(i + 1, num_emails)  # NEW: updates GUI progress bar/counter
+            progress_callback(i + 1, num_emails)  
 
             if i + 1 < num_emails:
-                time.sleep(delay)           # was: time.sleep(6)
+                time.sleep(delay)           
 
-        server.quit()                       # <-- unchanged
+        server.quit()                       
         done_callback(True, None, stop_event.is_set())
     except Exception as e:
         done_callback(False, str(e), False)
@@ -113,7 +89,7 @@ class EmailSenderApp(ctk.CTk):
         self.resizable(False, False)
         self.configure(fg_color="#161C2B")
 
-        # Center the window on screen so it never goes off-screen
+        
         self.update_idletasks()
         w, h = 620, 700
         x = (self.winfo_screenwidth() // 2) - (w // 2)
@@ -308,8 +284,7 @@ class EmailSenderApp(ctk.CTk):
         self.status_label.configure(text="Sending... please wait.", text_color="#4FD1C5")
         self.send_btn.configure(state="disabled")
 
-        # Run the ORIGINAL backend function in a background thread
-        # so the GUI never freezes.
+        
         self.sending_thread = threading.Thread(
             target=send_bulk_emails,
             args=(receiver, subject, message, num_emails, delay,
