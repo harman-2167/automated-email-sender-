@@ -8,7 +8,7 @@ import time
 server = smtplib.SMTP('smtp.gmail.com', 587)
 server.starttls()
 def serv(server):
-    server.login('hdeep89977@gmail.com', 'syqk fsmb yhsg zmma')
+    server.login('hdeep89977@gmail.com', 'enter_your_password')
 
 serv(server)
 
