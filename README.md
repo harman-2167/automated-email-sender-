@@ -1,11 +1,10 @@
-# automated-email-sender-
+# Automated-email-sender-
 GUI-based Automated Email Sender built with Python, CustomTkinter, and SMTP.
 
-==============Overview==============
-
+## Overview
 A Python-based desktop application that automates sending emails using SMTP. The application features a modern GUI built with CustomTkinter and supports sending multiple emails efficiently.
 
-=============Features===============
+## Features
 - Modern CustomTkinter GUI
 - SMTP-based email sending
 - Multiple email delivery
@@ -13,7 +12,7 @@ A Python-based desktop application that automates sending emails using SMTP. The
 - Send status updates
 - Easy-to-use interface
 
-=============Technologies Used============
+## Technologies Used
 
 - Python
 - CustomTkinter
@@ -21,7 +20,7 @@ A Python-based desktop application that automates sending emails using SMTP. The
 - EmailMessage
 - Threading
 
-============Project Structure==============
+##Project Structure
 
 Automated-Email-Sender/
 
@@ -35,11 +34,11 @@ Automated-Email-Sender/
 
 │── README.md
 
-===========Installation===========
+## Installation
 
 pip install customtkinter
 
-==============Usage================
+## Usage
 
 1. Launch the application.
 2. Enter the sender's email address and App Password.
@@ -50,7 +49,7 @@ pip install customtkinter
 7. Monitor the status in the application.
 8. Verify the received emails in the recipient's inbox.
 
-============Screenshots============
+## Screenshots
 
 . Sender GUI
 
@@ -58,7 +57,7 @@ pip install customtkinter
 
 . Recipient Inbox (10 emails received successfully)
 
-==============Future Enhancements============
+## Future Enhancements
 
 . Bulk email support using CSV files
 
@@ -72,6 +71,6 @@ pip install customtkinter
 
 . Improved logging and error handling
 
-===============Author===============
+## Author
 
 Harmandeep Kaur
